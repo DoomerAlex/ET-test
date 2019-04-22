@@ -1,0 +1,3 @@
+SQL-запрос, который выведет авторов, написавших меньше 7 книг.
+
+SELECT A.name FROM author A WHERE (SELECT COUNT(BA.book_id) as books FROM book_author BA WHERE A.id = BA.author_id GROUP BY author_id) < 7
